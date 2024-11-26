@@ -57,6 +57,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.
 
 ## Contact
-Your Name - sackeyemmanuelfynn@gmail.com
+Fynn - sackeyemmanuelfynn@gmail.com
 
 Project Link: [https://github.com/InFynnity8/DSA](https://github.com/InFynnity8/DSA)
