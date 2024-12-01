@@ -34,7 +34,7 @@ class SimpleHashSet:
             print(f"Bucket {index}: {bucket}")
 
 # Creating the Hash Set from the simulation
-hash_set = SimpleHashSet(size=10)
+hash_set = SimpleHashSet(10)
 
 hash_set.add("Charlotte")
 hash_set.add("Thomas")
