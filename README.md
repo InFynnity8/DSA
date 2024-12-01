@@ -57,6 +57,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.
 
 ## Contact
-Fynn - sackeyemmanuelfynn@gmail.com
+Fynn - [https://infynnity.netlify.app/contact](https://infynnity.netlify.app/contact)
 
 Project Link: [https://github.com/InFynnity8/DSA](https://github.com/InFynnity8/DSA)
