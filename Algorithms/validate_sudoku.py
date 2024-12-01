@@ -1,68 +1,33 @@
 class Solution:
     def isValidSudoku(self, board) -> bool:
-        i, j, k = 0, 0, 0
-        trnboard = [] * 9
-        y = 0
-        while y < 9:
-            arr = []
-            for x in range(9):
-                arr.append(board[x][y])
-            trnboard.append(arr)
-            y += 1
+        # Check rows, columns, and 3x3 sub-boxes
+        rows = [set() for _ in range(9)]
+        cols = [set() for _ in range(9)]
+        boxes = [set() for _ in range(9)]
 
-        sqrboard = [] * 9
-        arr = []
-        count, m, n, s = 0, 0, 3, 0
-        while count < 27:
-            index = count % 9
-            line = board[index]
-            arr += line[m:n]
-            if count % 3 == 2:
-                sqrboard.append(arr)
-                arr = []
-                s += 1
-            if count % 9 == 8:
-                m += 3
-                n += 3
-            count += 1
+        for i in range(9):
+            for j in range(9):
+                num = board[i][j]
+                if num == '.':
+                    continue
 
-        def row_check(row, i):
-            row_arr =  [] * 9
-            for digit in row:
-                if digit.isdigit():
-                    row_arr.append(int(digit))
-            i += 1
-            row_set = set(row_arr)
-            if i < 9:
-                return (len(row_set) == len(row_arr)) and row_check(board[i], i)
-            return (len(row_set) == len(row_arr))
+                # Check row
+                if num in rows[i]:
+                    return False
+                rows[i].add(num)
 
-        def column_check(column, j):
-            column_arr =[] * 9
-            for digit in column:
-                if digit.isdigit():
-                    column_arr.append(int(digit))
-            j += 1
-            column_set = set(column_arr)
-            if j < 9:
-                return (len(column_set) == len(column_arr)) and column_check(trnboard[j], j)
-            return (len(column_set) == len(column_arr))
-                  
-        def box_check(box, k):
-            box_arr = [] * 9
-            for digit in box:
-                if digit.isdigit():
-                    box_arr.append(int(digit))
-            k += 1
-            box_set = set(box_arr)
-            if k < 9:
-                return (len(box_set) == len(box_arr)) and box_check(sqrboard[k], k)
-            return (len(box_set) == len(box_arr))
+                # Check column
+                if num in cols[j]:
+                    return False
+                cols[j].add(num)
 
-        if row_check(board[i], i) and column_check(trnboard[j], j) and box_check(sqrboard[k], k):
-            return True
+                # Check 3x3 box
+                box_index = (i // 3) * 3 + (j // 3)
+                if num in boxes[box_index]:
+                    return False
+                boxes[box_index].add(num)
 
-        return False
+        return True
 
 
 sol = Solution()
