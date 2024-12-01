@@ -43,15 +43,15 @@ class Binary_tree:
         return traversal
 
 
-tree = Binary_tree(0)
-tree.root.left = TreeNode(5)
-tree.root.right = TreeNode(7)
+tree = Binary_tree(1)
+tree.root.left = TreeNode(2)
+tree.root.right = TreeNode(3)
 
-tree.root.left.left = TreeNode(6)
-tree.root.left.right = TreeNode(9)
+tree.root.left.left = TreeNode(4)
+tree.root.left.right = TreeNode(5)
 
-tree.root.right.left = TreeNode(3)
-tree.root.right.right = TreeNode(13)
+tree.root.right.left = TreeNode(6)
+tree.root.right.right = TreeNode(7)
 
 print('PreOrder')
 print(tree.print_traverse("preorder"))
